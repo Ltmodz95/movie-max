@@ -1,0 +1,11 @@
+<% if @actor%>
+
+<div class="movies-container">
+    <% @actor.movies.sort_by(&:rating).reverse.each do |movie| %>
+        <%= render partial: 'movies/movie', locals:{movie: }%>
+    <% end %>
+</div>
+
+<% else%>
+ <p> Actor not found</p>
+<% end %>
