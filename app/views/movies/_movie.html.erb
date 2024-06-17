@@ -1,6 +1,11 @@
 <div class="movie-container">
     <%= image_tag("#{movie.name.downcase}.jpg")%>
     <p><%= movie.name%></p>
-    <span class="fa fa-star checked"></span>
+    <div>
+        <% movie.rating.to_i.times do %>
+            <span class="fa fa-star checked"></span>
+        <% end %>
+        (<%=movie.rating%>)
+    </div>
 </div>
 

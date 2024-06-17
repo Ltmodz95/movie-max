@@ -13,10 +13,13 @@
 
   <body>
     <header>
-      <p><b>Movie MAX</b><p>
+      <p><b><%= link_to 'Movie MAX', movies_path %></b><p>
     </header>
-    <aside></aside>
     <main>
+      <%= form_tag(actors_path,method: :get, class: 'search-form') do%>
+        <%= text_field_tag(:actor, params[:actor], placeholder: "search movies by actors name")%>
+        <%= submit_tag('search')%>
+      <%end%>
       <%= yield %>
     </main>
   </body>
